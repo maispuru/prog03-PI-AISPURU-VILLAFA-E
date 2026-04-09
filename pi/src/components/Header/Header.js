@@ -5,9 +5,7 @@ class Header extends Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            session: sessionStorage.getItem('sesion')
-        };
+
     }
         render (){
             return(
@@ -23,12 +21,7 @@ class Header extends Component{
                     <li className="nav-link">
                         <Link to = "/Series">Series </Link>
                     </li>
-                    {this.state.session ? null : <li className="nav-link"> <Link to = "/Login"> Iniciar sesion</Link> </li>}
-                    {this.state.session ? null : <li className="nav-link" > <Link to = "/Register"> Crear cuenta </Link> </li>}
-                    {this.state.session ? <li className="nav-link"><Link to="/favorites">Favoritos</Link></li> : null}
-                    
-    
-
+                   
                 </ul>
              </nav>
               
