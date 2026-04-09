@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 
 
 class Error404 extends Component  {
@@ -12,4 +12,4 @@ render(){
     }
 }
 
-export default Error404
+export default Error404 */

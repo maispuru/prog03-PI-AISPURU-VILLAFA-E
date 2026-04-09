@@ -1,6 +1,8 @@
-import { Route ,Switch} from 'react-router-dom'
-import Error404 from "./screens/Error404/Error404"
+import { Route ,Switch} from 'react-router-dom';
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
+import Error404 from "./screens/Error404/Error404";
 import SearchResults from "./componentes/SearchResults/SearchResults";
+
 
 function App() {
   return (
