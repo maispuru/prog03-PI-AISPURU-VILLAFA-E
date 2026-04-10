@@ -13,14 +13,14 @@ class Header extends Component{
              <nav className="container"> 
                <h1>Digital films</h1>
                 <ul className="nav nav-tabs my-4">
-                    <li className="nav-link">
-                        <Link to = "/">Inicio </Link>
+                    <li className="nav-item">
+                        <Link to = "/" className="nav-link">Inicio </Link>
                     </li>
-                    <li className="nav-link">
-                        <Link to = "/Peliculas">Peliculas </Link>
+                    <li className="nav-item">
+                        <Link to = "/Peliculas" className="nav-link">Peliculas </Link>
                     </li>
-                    <li className="nav-link">
-                        <Link to = "/Series">Series </Link>
+                    <li className="nav-item">
+                        <Link to = "/Series" className="nav-link">Series </Link>
                     </li>
                    
                 </ul>
