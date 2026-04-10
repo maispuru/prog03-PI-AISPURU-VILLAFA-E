@@ -1,0 +1,15 @@
+.error404 {
+    text-align: center;
+    padding: 10% 5%;
+}
+
+.error404 h1 {
+    font-size: 500%;
+    margin-bottom: 2%;
+    color: red;
+}
+
+.error404 h2 {
+    font-size: 200%;
+    font-weight: normal;
+}

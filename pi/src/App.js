@@ -1,15 +1,14 @@
 import { Route ,Switch} from 'react-router-dom';
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
-import Error404 from "./screens/Error404/Error404";
-import SearchResults from "./componentes/SearchResults/SearchResults";
+import Error404 from "./components/Error404/Error404";
+import SearchResults from "./components/SearchResults/SearchResults";
 
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/resultados/:id"  component={SearchResults}/>
-        <Route component={Error404} />
+          <Route path="/resultados/:id"  component={SearchResults}/>
+          <Route component={Error404} />
       </Switch>
     </div>
   );
