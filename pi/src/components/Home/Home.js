@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { data, Link } from "react-router-dom";
 
+
+
 class Home extends Component{
     constructor(props){
         super(props)
@@ -8,15 +10,35 @@ class Home extends Component{
             datos: " "
         }
     }
+
 componentDidMount( ){
-  fetch ("" )
-    .then (response => response.json())
-    .then ( console.log (data))
+
+  fetch('https://api.themoviedb.org/3/movie/popular?api_key=ed64b41cac1f7454df1403e56e96ce49')
+  .then(res => res.json())
+  .then (data => console.log (data))
+  .then(data => this.setState(
+    {datos: data.results}
+  ))
+  .catch(err => console.error(err));
 }
 
+
 render(){
+    return(
+        <div>
+            { 
+            this.state.datos === " " ?   <h3>Cargando...</h3> : <h3> {this.state.datos} </h3>}
+            <p> Hola</p>
+
+
+        </div>
+    )
    
 }
 
 }
+
+
+
+
 export default Home;
