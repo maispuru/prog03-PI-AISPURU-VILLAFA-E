@@ -8,9 +8,8 @@ class SearchResults extends Component{
         this.state = {
             botonTexto: "Ver mas",
             claseOcultar: "Ocultar",
-            id: props.match.params.id,
             personaje: null,
-            url: 'https://rickandmortyapi.com/api/character/' + props.match.params.id
+            url: 'https://api.themoviedb.org/3/search/collection?api_key=ed64b41cac1f7454df1403e56e96ce49&query=' + props.match.params.id
         }
     }
 cambio() {
@@ -27,9 +26,6 @@ cambio() {
         }
     }
 componentDidMount(){
-        this.apiCall(this.state.url)
-    }
-apiCall(url){
         fetch(url)
             .then(response => response.json())
             .then(data => this.setState({
