@@ -7,7 +7,8 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
-            datos: " "
+            datos: " ",
+            valor: " "
         }
     }
 
@@ -23,13 +24,14 @@ componentDidMount( ){
 }
 
 
+
 render(){
     return(
         <div>
-            { 
-            this.state.datos === " " ?   <h3>Cargando...</h3> : <h3> {this.state.datos} </h3>}
-            <p> Hola</p>
-
+            
+            { this.state.datos === " " ?   
+            (<img src={`/img/Gif.gif`} alt="..Cargando"></img>) 
+            : <h3> {this.state.datos} </h3>}
 
         </div>
     )
@@ -38,6 +40,28 @@ render(){
 
 }
 
+/*BASE Filtro busqueda
+controlarCambios(event) {
+        this.setState({valor: event.target.value});
+    }
+enviarFormulario(event) {
+    event.preventDefault();
+    let personajeBuscado = this.state.datos.filter((item) => {
+        return item.title && item.title.toLowerCase().includes(this.state.valor.toLowerCase())
+    })[0]
+
+    this.props.history.push("/resultados/" + personajeBuscado.id)
+}
+ejecutarBusqueda(item){
+        this.props.history.push("/resultados/" + item.id)
+    }
+        
+            <form onSubmit={(event)=>this.enviarFormulario(event)}>
+                        <label>Name:</label>
+                        <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
+                        <input type="submit" value="Submit" />
+            </form>
+*/
 
 
 
