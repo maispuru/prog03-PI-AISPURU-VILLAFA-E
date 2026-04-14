@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from "./components/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
 
+
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
           <Route path='/crear' component= {CrearCuenta}/>
           <Route path="/resultados/:id"  component={SearchResults}/>     
           <Route component={Error404} />
+
       </Switch>
 
     </div>
