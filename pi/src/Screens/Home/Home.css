@@ -58,8 +58,6 @@ nav {
 }
 .single-card-movie {
     width: 24%;
-    margin-bottom: 15px; 
-    padding: 8px;
 }
 .single-card-playing {
     width: 15%;
@@ -84,7 +82,7 @@ nav {
 }
 
 .all-movies .single-card-movie {
-    width: 20%;
+    width: 15%;
 }
 
 @media(min-width: 765px){
