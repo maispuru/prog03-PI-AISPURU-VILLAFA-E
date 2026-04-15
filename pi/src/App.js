@@ -4,6 +4,7 @@ import SearchResults from "./components/SearchResults/SearchResults";
 import Header from './components/Header/Header';
 import Home from "./components/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
+/*import Favoritos from "./components/Favoritos/Favoritos";*/
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path='/crear' component= {CrearCuenta}/>
           <Route path="/resultados/:id"  component={SearchResults}/>     
           <Route component={Error404} />
+          /*<Route path='/favoritos' component={Favoritos}/>*/
 
       </Switch>
 
