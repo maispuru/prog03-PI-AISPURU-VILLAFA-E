@@ -32,25 +32,23 @@ class Favoritos extends Component {
     }
 
     eliminarPelicula(id) {
-        let nuevaLista = this.state.peliculasFavoritas.filter(function(item) {
-            return item.id !== id;
-        });
-        localStorage.setItem("peliculasFavoritas", JSON.stringify(nuevaLista));
-        this.setState({ peliculasFavoritas: nuevaLista });
-    }
+            let alamacen = localStorage.getItem("peliculasFavoritas")
+            let storageFav=JSON.parse(alamacen)
+            let identificador = storageFav.filter((item) => item != id)
+            localStorage.setItem("peliculasFavoritas",JSON.stringify(identificador))
+        }
 
     eliminarSerie(id) {
-        let nuevaLista = this.state.seriesFavoritas.filter(function(item) {
-            return item.id !== id;
-        });
-        localStorage.setItem("seriesFavoritas", JSON.stringify(nuevaLista));
-        this.setState({ seriesFavoritas: nuevaLista });
+            let alamacen = localStorage.getItem("seriesFavoritas")
+            let storageFav=JSON.parse(alamacen)
+            let identificador = storageFav.filter((item) => item != id)
+            localStorage.setItem("seriesFavoritas",JSON.stringify(identificador))
     }
 
     render() {
         return (
             <div className="container">
-
+            
                 <h2 className="alert alert-primary">Películas Favoritas</h2>
                 <section className="row cards" id="movies">
                     {this.state.peliculasFavoritas.map((item, idx) =>

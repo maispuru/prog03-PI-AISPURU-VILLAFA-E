@@ -5,6 +5,10 @@ import Header from './components/Header/Header';
 import Home from "./components/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
 /*import Favoritos from "./components/Favoritos/Favoritos";*/
+import Movies from "./components/Movies/Movies"
+import Series from "./components/Series/Series"
+import Register from "./components/Register/Register"
+import Footer from "./components/Footer/Footer"
 
 
 function App() {
@@ -15,12 +19,14 @@ function App() {
       <Switch>
           <Route path='/' exact= {true} component= {Home}/>
           <Route path='/crear' component= {CrearCuenta}/>
+          <Route path='/login' component= {Register}/>
+          <Route path='/crear' component= {CrearCuenta}/>
+          <Route path='/login' component= {Register}/>
           <Route path="/resultados/:id"  component={SearchResults}/>     
           <Route component={Error404} />
-          /*<Route path='/favoritos' component={Favoritos}/>*/
-
+          <Route path='/favoritos' component={Favoritos}/>
       </Switch>
-
+    <footer><Footer /></footer>
     </div>
   );
 }
