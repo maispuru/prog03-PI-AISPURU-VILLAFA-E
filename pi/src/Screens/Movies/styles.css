@@ -1,0 +1,25 @@
+
+.all-movies .single-card-movie {
+    width: 15%;
+}
+
+.all-movies .card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.filter-form {
+    grid-template-columns: 1fr;
+    padding: 0.5rem 0;
+    margin-bottom: 20px;
+    display: grid;
+}
+
+.filter-form input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 100%;
+}
