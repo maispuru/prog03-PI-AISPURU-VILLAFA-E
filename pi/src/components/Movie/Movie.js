@@ -3,7 +3,7 @@ import { data, Link } from "react-router-dom";
 
 
 
-class Series extends Component{
+class Movie extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -23,4 +23,4 @@ render(){
 }
 
 }
-export default Series
+export default Movie
