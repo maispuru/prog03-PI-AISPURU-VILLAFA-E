@@ -19,14 +19,28 @@ class Peliculas extends Component {
         .catch(error => console.error(error));
     }
 
-    evitarSubmit(evento) {
-        evento.preventDefault();
-    }
 
     controlarCambios(evento) {
         this.setState({ filtro: evento.target.value });
     }
 
+    enviarFormulario(event) {
+    event.preventDefault();
+    if(this.props.datos == undefined){
+        return
+    }
+    let personajeBuscado = this.props.datos.find((item) => {
+        return item.name && item.name.toLowerCase().includes(this.state.valor.toLowerCase())
+    })
+    
+    if(personajeBuscado != undefined){
+        this.props.history.push("/resultadosPeliculas/" + personajeBuscado.id)
+    }
+
+}
+ejecutarBusqueda(item){
+        this.props.history.push("/resultadosPeliculas/" + item.id)
+}
     filtrarPeliculas() {
         if (this.state.peliculas === undefined) {
             return [];
@@ -52,28 +66,32 @@ class Peliculas extends Component {
             <div className='container'>
                 <h2 className='alert alert-primary'>Todas las películas</h2>
 
-                <form className='filter-form px-0 mb-3' onSubmit={(evento) => this.evitarSubmit(evento)}>
-                    <input
-                        type='text'
-                        placeholder='Buscar dentro de la lista'
-                        value={this.state.filtro}
-                        onChange={(evento) => this.controlarCambios(evento)}
-                    />
+                <form onSubmit={(event)=>this.enviarFormulario(event)}>
+                        <label>Name:</label>
+                        <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
+                        <input type="submit" value="Submit" />
                 </form>
-
+                    {peliculasFiltradas.map((item, idx) => 
+                        <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
+                        </article>
+                    )}
                 <button className='btn btn-info' onClick={() => this.cargarMas()}>
                     Cargar más
                 </button>
 
                 <section className='row cards all-movies' id='movies'>
-                    {peliculasFiltradas.map((pelicula, indice) => {
-                        return (
-                            <CardMovie
-                                key={indice}
-                                data={pelicula}
-                            />
-                        )
-                    })}
+                    {peliculasFiltradas.length > 0 ? (
+                        peliculasFiltradas.map((pelicula, indice) => {
+                            return (
+                                <CardMovie
+                                    key={indice}
+                                    data={pelicula}
+                                />
+                            )
+                        })
+                    ) : (
+                        <p><img src={`/img/Gif.gif`} alt="..Cargando"></img></p>
+                    )}
                 </section>
 
 
