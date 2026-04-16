@@ -24,32 +24,22 @@ class Peliculas extends Component {
         this.setState({ filtro: evento.target.value });
     }
 
-    enviarFormulario(event) {
+enviarFormulario(event) {
     event.preventDefault();
-    if(this.props.datos == undefined){
-        return
-    }
-    let personajeBuscado = this.props.datos.find((item) => {
-        return item.name && item.name.toLowerCase().includes(this.state.valor.toLowerCase())
-    })
-    
-    if(personajeBuscado != undefined){
-        this.props.history.push("/resultadosPeliculas/" + personajeBuscado.id)
-    }
 
+    let peliculaBuscada = this.state.peliculas.filter((item) => {
+        return item.title && item.title.toLowerCase().includes(this.state.filtro.toLowerCase())
+    });
+    console.log(peliculaBuscada);
+
+    if (peliculaBuscada != undefined) {
+        this.props.history.push("/resultadosPelis/" + peliculaBuscada.title)
+    }
 }
 ejecutarBusqueda(item){
-        this.props.history.push("/resultadosPeliculas/" + item.id)
+        this.props.history.push("/resultadosPelis/" + item.title)
 }
-    filtrarPeliculas() {
-        if (this.state.peliculas === undefined) {
-            return [];
-        }
-        let peliculaBuscada = this.state.peliculas.filter((pelicula) => {
-            return pelicula.title && pelicula.title.toLowerCase().includes(this.state.filtro.toLowerCase());
-        });
-        return peliculaBuscada;
-    }
+    
 
     cargarMas() {
         this.paginaActual = this.paginaActual + 1;
@@ -60,15 +50,13 @@ ejecutarBusqueda(item){
     }
 
     render() {
-        let peliculasFiltradas = this.filtrarPeliculas();
-
+        let peliculasFiltradas = this.state.peliculas;
         return (
             <div className='container'>
                 <h2 className='alert alert-primary'>Todas las películas</h2>
-
                 <form onSubmit={(event)=>this.enviarFormulario(event)}>
                         <label>Name:</label>
-                        <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
+                        <input type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
                         <input type="submit" value="Submit" />
                 </form>
                     {peliculasFiltradas.map((item, idx) => 
@@ -93,8 +81,6 @@ ejecutarBusqueda(item){
                         <p><img src={`/img/Gif.gif`} alt="..Cargando"></img></p>
                     )}
                 </section>
-
-
             </div>
         )
     }

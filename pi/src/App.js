@@ -23,7 +23,8 @@ function App() {
           <Route path='/login' component= {Register}/>
           <Route path='/peliculas' component={Peliculas}/>
           <Route path='/series' component={Series}/>
-          <Route path="/resultados/:id"  component={SearchResults}/>     
+          <Route path="/resultadosPelis/:id"  component={SearchResultsPelis}/>   
+          <Route path="/resultadosSeries/:id"  component={SearchResultsSeries}/>    
           <Route component={Error404} />
       </Switch>
     <footer><Footer /></footer>

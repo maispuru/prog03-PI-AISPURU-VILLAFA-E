@@ -28,16 +28,21 @@ class Series extends Component {
         this.setState({ filtro: evento.target.value });
     }
 
-    filtrarSeries() {
-        if (this.state.series === undefined) {
-            return [];
-        }
-        let serieBuscada = this.state.series.filter((serie) => {
-            return serie.name && serie.name.toLowerCase().includes(this.state.filtro.toLowerCase());
-        });
-        return serieBuscada;
-    }
+enviarFormulario(event) {
+    event.preventDefault();
 
+    let seriesBuscada = this.state.series.filter((item) => {
+        return item.name && item.name.toLowerCase().includes(this.state.filtro.toLowerCase())
+    });
+    console.log(seriesBuscada);
+
+    if (seriesBuscada != undefined) {
+        this.props.history.push("/resultadosSeries/" + seriesBuscada.name)
+    }
+}
+ejecutarBusqueda(item){
+        this.props.history.push("/resultadosSeries/" + item.name)
+}
     cargarMas() {
         this.paginaActual = this.paginaActual + 1;
         fetch(`https://api.themoviedb.org/3/tv/airing_today?api_key=ed64b41cac1f7454df1403e56e96ce49&page=${this.paginaActual}`)
@@ -47,21 +52,20 @@ class Series extends Component {
     }
 
     render() {
-        let seriesFiltradas = this.filtrarSeries();
+        let seriesFiltradas = this.state.series;
 
         return (
             <div className='container'>
                 <h2 className='alert alert-warning'>Todas las series</h2>
-
-                <form className='filter-form px-0 mb-3' onSubmit={(evento) => this.evitarSubmit(evento)}>
-                    <input
-                        type='text'
-                        placeholder='Buscar dentro de la lista'
-                        value={this.state.filtro}
-                        onChange={(evento) => this.controlarCambios(evento)}
-                    />
+                <form onSubmit={(event)=>this.enviarFormulario(event)}>
+                        <label>Name:</label>
+                        <input type="text" placeholder="Buscar series   " onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
+                        <input type="submit" value="Submit" />
                 </form>
-
+                    {seriesFiltradas.map((item, idx) => 
+                        <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
+                        </article>
+                    )}
                 <button className='btn btn-warning' onClick={() => this.cargarMas()}>
                     Cargar más
                 </button>
