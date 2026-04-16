@@ -5,10 +5,10 @@ import Header from './components/Header/Header';
 import Home from "./Screens/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
 /*import Favoritos from "./components/Favoritos/Favoritos";*/
-import Series from "./components/Series/Series"
 import Register from "./components/Register/Register"
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
+import Series from "./Screens/Series/Series";
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Route path='/crear' component= {CrearCuenta}/>
           <Route path='/login' component= {Register}/>
           <Route path='/peliculas' component={Peliculas}/>
+          <Route path='/series' component={Series}/>
           <Route path="/resultados/:id"  component={SearchResults}/>     
           <Route component={Error404} />
       </Switch>
