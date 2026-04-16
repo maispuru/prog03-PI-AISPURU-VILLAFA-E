@@ -30,7 +30,6 @@ class Series extends Component {
 
 enviarFormulario(event) {
     event.preventDefault();
-
     if (this.state.filtro != "") {
         this.props.history.push("/resultadosSeries/" + this.state.filtro)
     }
@@ -51,19 +50,23 @@ ejecutarBusqueda(item){
 
         return (
             <div className='container'>
-                <h2 className='alert alert-warning'>Todas las series</h2>
-                <form onSubmit={(event)=>this.enviarFormulario(event)}>
-                        <label>Name:</label>
-                        <input type="text" placeholder="Buscar series   " onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
-                        <input type="submit" value="Submit" />
-                </form>
+                <div className='barra-busqueda-peliculas'>
+                    <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
+                        <input type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
+                        <input type="submit" value="Buscar" />
+                    </form>
+                </div>
                     {seriesFiltradas.map((item, idx) => 
                         <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
                         </article>
                     )}
-                <button className='btn btn-warning' onClick={() => this.cargarMas()}>
-                    Cargar más
-                </button>
+                <h2 className='TituloSerie'>Todas las series</h2>
+                <br/>
+                <div className="contenedor-boton-cargar">
+                    <button className='boton-cargar-mas' onClick={() => this.cargarMas()}>
+                        Cargar más
+                    </button>
+                </div>
 
                 <section className='row cards all-series' id='series'>
                     {seriesFiltradas.map((serie, indice) => {

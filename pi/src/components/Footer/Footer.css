@@ -1,0 +1,41 @@
+.main-footer{
+    width: 96%;
+    margin: 2% auto 1% auto;
+    background: linear-gradient(90deg, #2f3842 0%, #43515f 100%);
+    border-radius: 12px;
+    padding: 1.5% 2%;
+    box-shadow: 0 0.6% 1.4% rgba(0, 0, 0, 0.18);
+}
+
+.footer-contenido{
+    width: 100%;
+}
+
+.footer-nombres{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 1.2%;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-nombre{
+    width: 32%;
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-size: 100%;
+    padding: 0.8% 0;
+    background-color: rgba(255,255,255,0.06);
+    border-radius: 8px;
+}
+
+.footer-copy{
+    margin: 1.2% 0 0 0;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    font-size: 95%;
+    letter-spacing: 0.4px;
+}

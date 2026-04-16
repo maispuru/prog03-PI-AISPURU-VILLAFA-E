@@ -5,14 +5,47 @@ class CardPelicula extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            informacionItem: props.data
+            informacionItem: props.data,
+            esFavorito: false
         }
     }
 
+    
+    componentDidMount() {
+        let favoritosGuardados = localStorage.getItem("favoritos") || "[]";
+        let favoritos = JSON.parse(favoritosGuardados);
+
+        let coincidencias = favoritos.filter((favorito) => {
+            return favorito.id === this.state.informacionItem.id && favorito.tipo === "pelicula";
+        });
+
+        if (coincidencias.length > 0) {
+            this.setState({ esFavorito: true });
+        }
+    }
+
+    agregarFavorito() {
+        let item = this.state.informacionItem;
+        let favoritosGuardados = localStorage.getItem("favoritos") || "[]";
+        let favoritos = JSON.parse(favoritosGuardados);
+
+        let nuevoFavorito = {
+            id: item.id,
+            tipo: "pelicula"
+        };
+
+        let favoritosActualizados = favoritos.concat(nuevoFavorito);
+        localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
+        this.setState({ esFavorito: true });
+    }
+
+
+
+    
     render() {
         let item = this.state.informacionItem;
 
-        return (
+    return (
             <article className="single-card-movie">
                 <img
                     src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
@@ -22,10 +55,20 @@ class CardPelicula extends Component {
                 <div className="cardBody">
                     <h5 className="card-title">{item.title}</h5>
                     <p className="card-text">{item.overview}</p>
-                    <Link to={"/detalle/" + item.id} className="btn btn-primary">Ver más</Link>
+                    <Link to={"/detallePelicula/" + item.id} className="btn btn-primary">Ver más</Link>
+                    <br/><br/>
+                    {this.state.esFavorito ? null : (
+                        <button className="btn btn-warning" onClick={() => this.agregarFavorito()}>
+                            ♥️ Agregar a favoritos
+                        </button>
+                    )}
                 </div>
             </article>
         )
+
+
+
+
     }
 }
 

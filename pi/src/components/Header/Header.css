@@ -1,95 +1,83 @@
-nav {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #eee;
-    border-radius: 4px;
-    margin-bottom: 20px;
+.main-header{
+    width: 96%;
+    margin: 1% auto;
+    padding: 1.2% 2%;
+    background: linear-gradient(90deg, #2f3842 0%, #43515f 100%);
+    border-radius: 12px;
+    box-shadow: 0 0.6% 1.4% rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255,255,255,0.08);
 }
-.nav {
-    margin: 0 !important;
-}
-.nav a{
-    color: #444;
-    text-decoration: none;
-}
-.nav a:hover{
-    font-weight: bold;
-}
-.search-form, .filter-form {
-    padding: .5rem 0;
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    column-gap: 5px;
-}
-.filter-form {
-    grid-template-columns: 1fr;
-}
-.search-form .btn-sm{
-    line-height: 1;
-    font-size: 0.9rem;
-}
-.search-form input,
-.filter-form input {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding-top: 3px;
-    vertical-align: middle;
-    line-height: 1;
-    font-size: 1rem;
-    padding-bottom: 4px;
-}
-.filter-form input {
-    line-height: 1.5;
-}
-.cards {
-    padding: 0.75rem 1.25rem;
+
+.header-contenido{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 2%;
-}
-.cardBody {
-    margin-top: 20px;
-}
-.single-card-people {
-    width: 19%;
-}
-.single-card-movie {
-    width: 24%;
-    margin-bottom: 15px; 
-    padding: 8px;
-}
-.single-card-playing {
-    width: 15%;
-}
-#now-playing .card-text{
-    height: 100px;
-    overflow: hidden;
-}
-.single-card-tv {
-    width: 19%;
-}
-.tv-show .card-text{
-    height: 100px;
-    overflow: hidden;
-}
-.single-card-on-air{
-    width: 15%;
-}
-#on-air-today .card-text{
-    height: 100px;
-    overflow: hidden;
+    align-items: center;
 }
 
-.all-movies .single-card-movie {
-    width: 20%;
+.header-izquierda{
+    width: 30%;
 }
 
-@media(min-width: 765px){
-    nav {
-        grid-template-columns: 1fr;
-    }
+.header-derecha{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
 }
 
+.logo{
+    color: white;
+    font-size: 260%;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.logo::after{
+    content: "";
+    display: block;
+    width: 28%;
+    height: 3px;
+    background-color: #c7d0d9;
+    margin-top: 3%;
+    border-radius: 10px;
+}
+
+.frase-header{
+    color: rgba(255,255,255,0.78);
+    font-size: 95%;
+    margin-top: 4%;
+    margin-bottom: 0;
+}
+
+.nav-principal{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5%;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-link{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 1% 1.8%;
+    border-radius: 8px;
+    font-size: 95%;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    background-color: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+}

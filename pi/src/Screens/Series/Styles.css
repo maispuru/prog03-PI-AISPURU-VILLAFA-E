@@ -7,3 +7,72 @@
     width: 100%;
     height: auto;
 }
+.TituloSerie{
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3f4e5e;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 20px 0 30px 20px;
+}
+.contenedor-boton-cargar{
+    width: 100%;
+    text-align: right;
+    margin: 2% 0 2.5% 0;
+}
+
+.boton-cargar-mas{
+    width: 18%;
+    padding: 0.9% 0;
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.barra-busqueda-peliculas{
+    width: 100%;
+    margin: 10px 0 0 20px;
+    background: transparent;
+}
+
+.form-busqueda-peliculas{
+    width: 320px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.form-busqueda-peliculas input[type="text"]{
+    width: 220px;
+    height: 34px;
+    border: 1px solid #c8c8c8;
+    border-radius: 1px;
+    padding: 0 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.form-busqueda-peliculas input[type="submit"]{
+    width: 92px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 1px;
+    background-color: #4a5568;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}

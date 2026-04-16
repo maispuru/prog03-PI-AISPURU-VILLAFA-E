@@ -36,11 +36,11 @@ render(){
     return(
       <div>
        <div className="cards-title">
-         <h2 className="alert alert-warning">Peliculas mas populares </h2>
+         <h2 className="TituloHome">Peliculas mas populares </h2>
         </div> 
          <section className="row cards" > 
             {this.state.movies === null ? 
-             <h3>CARGANDO...</h3> : 
+             <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
              this.state.movies.slice(0,4).map((pelicula ,idx) => (
                     <CardHomeMovie
                       key={idx}
@@ -56,11 +56,11 @@ render(){
 
          </section>
            <div className="cards-title" >
-             <h2 className="alert alert-warning">Series mas vistas esta semana</h2>
+             <h2 className="TituloHome">Series mas vistas esta semana</h2>
            </div>
          <section className="row cards" >
           {this.state.series === null ? 
-             <h3>CARGANDO...</h3> : 
+             <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
              this.state.series.slice(0,4).map((serie , idx) => (
          
                     <CardHomeSerie

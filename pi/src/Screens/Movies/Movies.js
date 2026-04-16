@@ -48,20 +48,24 @@ ejecutarBusqueda(item){
         let peliculasFiltradas = this.state.peliculas;
         return (
             <div className='container'>
-                <h2 className='alert alert-primary'>Todas las películas</h2>
-                <form onSubmit={(event)=>this.enviarFormulario(event)}>
-                        <label>Name:</label>
+                <div className='barra-busqueda-peliculas'>
+                    <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
                         <input type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
-                        <input type="submit" value="Submit" />
-                </form>
+                        <input type="submit" value="Buscar" />
+                    </form>
+                </div>
                     {peliculasFiltradas.map((item, idx) => 
                         <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
                         </article>
                     )}
-                <button className='btn btn-info' onClick={() => this.cargarMas()}>
-                    Cargar más
-                </button>
-
+                <br/>
+                <h2 className='TituloMovie'>Todas las películas</h2>
+                <div className="contenedor-boton-cargar">
+                    <button className='boton-cargar-mas' onClick={() => this.cargarMas()}>
+                        Cargar más
+                    </button>
+                </div>
+                
                 <section className='row cards all-movies' id='movies'>
                     {peliculasFiltradas.length > 0 ? (
                         peliculasFiltradas.map((pelicula, indice) => {

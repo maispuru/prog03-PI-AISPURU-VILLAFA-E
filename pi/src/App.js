@@ -5,7 +5,7 @@ import SearchResultsSeries from "./Screens/SearchResultsSerie/SearchResultsSerie
 import Header from './components/Header/Header';
 import Home from "./Screens/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
-/*import Favoritos from "./components/Favoritos/Favoritos";*/
+import Favoritos from "./Screens/Favoritos/Favoritos";
 import Register from "./components/Register/Register"
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
@@ -27,6 +27,7 @@ function App() {
           <Route path='/series' component={Series}/>
           <Route path='/detallePelicula/:id' component={DetallesMovies} />
           <Route path='/detalleSerie/:id' component={DetallesSeries} />
+          <Route path='/favoritos' component={Favoritos}/>
           <Route path="/resultadosPelicula/:id"  component={SearchResultsPelis}/>   
           <Route path="/resultadosSeries/:id"  component={SearchResultsSeries}/>    
           <Route component={Error404} />
