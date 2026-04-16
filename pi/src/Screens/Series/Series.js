@@ -36,7 +36,7 @@ enviarFormulario(event) {
     });
     console.log(seriesBuscada);
 
-    if (seriesBuscada != undefined) {
+    if (seriesBuscada !== undefined) {
         this.props.history.push("/resultadosSeries/" + seriesBuscada.name)
     }
 }

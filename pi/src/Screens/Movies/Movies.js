@@ -32,7 +32,7 @@ enviarFormulario(event) {
     });
     console.log(peliculaBuscada);
 
-    if (peliculaBuscada != undefined) {
+    if (peliculaBuscada !== undefined) {
         this.props.history.push("/resultadosPelis/" + peliculaBuscada.title)
     }
 }
