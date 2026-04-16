@@ -31,13 +31,8 @@ class Series extends Component {
 enviarFormulario(event) {
     event.preventDefault();
 
-    let seriesBuscada = this.state.series.filter((item) => {
-        return item.name && item.name.toLowerCase().includes(this.state.filtro.toLowerCase())
-    });
-    console.log(seriesBuscada);
-
-    if (seriesBuscada != undefined) {
-        this.props.history.push("/resultadosSeries/" + seriesBuscada.name)
+    if (this.state.filtro != "") {
+        this.props.history.push("/resultadosSeries/" + this.state.filtro)
     }
 }
 ejecutarBusqueda(item){

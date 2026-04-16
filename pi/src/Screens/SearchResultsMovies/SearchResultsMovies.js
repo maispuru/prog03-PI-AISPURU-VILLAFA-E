@@ -2,6 +2,7 @@
 import { withRouter } from 'react-router-dom'
 import React, { Component } from 'react';
 import CardMovie from '../../components/CardMovie/CardMovie';
+import './SearchResultsMovies.css';
 
 class SearchResultsMovies extends Component{ 
     constructor(props){
@@ -22,7 +23,7 @@ componentDidMount(){
     }
 render(){
     return(
-        <div><h2>Resultados </h2>
+        <div><h2 className="titulo-resultados">Resultados </h2>
         <section className='row cards all-movies' id='movies'>
             {this.state.personaje.length > 0 ? (
                 this.state.personaje.map((pelicula, indice) => {

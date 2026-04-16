@@ -27,17 +27,12 @@ class Peliculas extends Component {
 enviarFormulario(event) {
     event.preventDefault();
 
-    let peliculaBuscada = this.state.peliculas.filter((item) => {
-        return item.title && item.title.toLowerCase().includes(this.state.filtro.toLowerCase())
-    });
-    console.log(peliculaBuscada);
-
-    if (peliculaBuscada != undefined) {
-        this.props.history.push("/resultadosPelis/" + peliculaBuscada.title)
+    if (this.state.filtro != "") {
+        this.props.history.push("/resultadosPelicula/" + this.state.filtro)
     }
 }
 ejecutarBusqueda(item){
-        this.props.history.push("/resultadosPelis/" + item.title)
+        this.props.history.push("/resultadosPelicula/" + item.title)
 }
     
 

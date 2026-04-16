@@ -27,7 +27,7 @@ function App() {
           <Route path='/series' component={Series}/>
           <Route path='/detallePelicula/:id' component={DetallesMovies} />
           <Route path='/detalleSerie/:id' component={DetallesSeries} />
-          <Route path="/resultadosPelis/:id"  component={SearchResultsPelis}/>   
+          <Route path="/resultadosPelicula/:id"  component={SearchResultsPelis}/>   
           <Route path="/resultadosSeries/:id"  component={SearchResultsSeries}/>    
           <Route component={Error404} />
       </Switch>
