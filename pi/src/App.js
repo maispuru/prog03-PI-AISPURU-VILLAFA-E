@@ -10,6 +10,8 @@ import Register from "./components/Register/Register"
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
 import Series from "./Screens/Series/Series";
+import DetallesMovies from './Screens/DetallesMovies/Detallesmovies';
+import DetallesSeries from './Screens/DetallesSeries/DetallesSeries';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           <Route path='/login' component= {Register}/>
           <Route path='/peliculas' component={Peliculas}/>
           <Route path='/series' component={Series}/>
+          <Route path='/detallePelicula/:id' component={DetallesMovies} />
+          <Route path='/detalleSerie/:id' component={DetallesSeries} />
           <Route path="/resultadosPelis/:id"  component={SearchResultsPelis}/>   
           <Route path="/resultadosSeries/:id"  component={SearchResultsSeries}/>    
           <Route component={Error404} />

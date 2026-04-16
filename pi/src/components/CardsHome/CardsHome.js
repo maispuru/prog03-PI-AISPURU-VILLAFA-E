@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import CardHome from "../CardHome/CardHome";
+import CardHomeMovie from "../CardHomeMovie/CardHomeMovie";
+import CardHomeSerie from "../CardHomeSerie/CardHomeSerie";
 
 
 
@@ -40,9 +41,8 @@ render(){
          <section className="row cards" > 
             {this.state.movies === null ? 
              <h3>CARGANDO...</h3> : 
-             this.state.movies.slice(0,4).map((pelicula ,idx) => {
-                return(
-                    <CardHome
+             this.state.movies.slice(0,4).map((pelicula ,idx) => (
+                    <CardHomeMovie
                       key={idx}
                       id={pelicula.id}
                       titulo={pelicula.title}
@@ -51,7 +51,7 @@ render(){
                     />
                 )
 
-             })}
+             )}
 
 
          </section>
@@ -61,9 +61,9 @@ render(){
          <section className="row cards" >
           {this.state.series === null ? 
              <h3>CARGANDO...</h3> : 
-             this.state.series.slice(0,4).map((serie , idx) => {
-                return(
-                    <CardHome
+             this.state.series.slice(0,4).map((serie , idx) => (
+         
+                    <CardHomeSerie
                       key={idx}
                       id= {serie.id}
                       titulo={serie.name}
@@ -72,7 +72,7 @@ render(){
                     />
                 )
 
-             })}
+            )}
 
          </section>
 

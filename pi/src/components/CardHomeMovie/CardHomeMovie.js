@@ -3,7 +3,7 @@ import {  Link } from "react-router-dom";
 
 
 
-function CardHome(props) {
+function CardHomeMovie(props) {
     return(
         <article className="single-card-movie" >
             <img src= {"https://image.tmdb.org/t/p/w500"  + props.imagen} className="card-img-top" />
@@ -11,11 +11,11 @@ function CardHome(props) {
                  <h5 className="card-title"> {props.titulo}</h5>
                  <button>Ver descripción</button>
                  <p className="card-text"> {props.descripcion}</p>
-                 <Link to = {"/dettalle/" + props.id}  className="btn btn-primary"> Ver mas  </Link>
+                 <Link to = {"/detallePelicula/" + props.id}  className="btn btn-primary"> Ver mas  </Link>
 
             </div>
         </article>
     )
 }
 
-export default CardHome
+export default CardHomeMovie
