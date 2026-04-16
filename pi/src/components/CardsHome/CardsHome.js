@@ -8,8 +8,8 @@ class CardsHome extends Component{
     constructor(props){
         super(props)
         this.state = {
-            movies: " ",
-            series: " "
+            movies: null,
+            series: null
         }
     }
 
@@ -33,10 +33,12 @@ componentDidMount( ){
 
 render(){
     return(
-       <div>
+      <div>
+       <div className="cards-title">
          <h2 className="alert alert-warning">Peliculas mas populares </h2>
-         <section className="row cards" id="movies"> 
-            {this.state.movies === " " ? 
+        </div> 
+         <section className="row cards" > 
+            {this.state.movies === null ? 
              <h3>CARGANDO...</h3> : 
              this.state.movies.slice(0,4).map((pelicula ,idx) => {
                 return(
@@ -51,10 +53,13 @@ render(){
 
              })}
 
+
          </section>
-           <h2 className="alert alert-warning">Series mas vistas esta semana</h2>
-         <section className="row cards" id="tv-show">
-          {this.state.series === " " ? 
+           <div className="cards-title" >
+             <h2 className="alert alert-warning">Series mas vistas esta semana</h2>
+           </div>
+         <section className="row cards" >
+          {this.state.series === null ? 
              <h3>CARGANDO...</h3> : 
              this.state.series.slice(0,4).map((serie , idx) => {
                 return(
@@ -71,7 +76,7 @@ render(){
 
          </section>
 
-        </div>
+      </div>
     )
    
 }

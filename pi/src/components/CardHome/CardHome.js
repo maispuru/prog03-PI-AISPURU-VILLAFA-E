@@ -11,7 +11,7 @@ function CardHome(props) {
                  <h5 className="card-title"> {props.titulo}</h5>
                  <button>Ver descripción</button>
                  <p className="card-text"> {props.descripcion}</p>
-                 <Link to = {"/dettalle/" + props.id}> Ver mas</Link>
+                 <Link to = {"/dettalle/" + props.id}  className="btn btn-primary"> Ver mas  </Link>
 
             </div>
         </article>
