@@ -1,6 +1,7 @@
 import { Route ,Switch} from 'react-router-dom';
 import Error404 from "./components/Error404/Error404";
-import SearchResults from "./components/SearchResults/SearchResults";
+import SearchResultsPelis from "./Screens/SearchResultsMovies/SearchResultsMovies";
+import SearchResultsSeries from "./Screens/SearchResultsSerie/SearchResultsSerie";
 import Header from './components/Header/Header';
 import Home from "./Screens/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
@@ -21,8 +22,13 @@ function App() {
           <Route path='/crear' component= {CrearCuenta}/>
           <Route path='/login' component= {Register}/>
           <Route path='/peliculas' component={Peliculas}/>
+<<<<<<< HEAD
           <Route path='/series' component={Series}/>
           <Route path="/resultados/:id"  component={SearchResults}/>     
+=======
+          <Route path="/resultadosPeliculas/:id"  component={SearchResultsPelis}/>     
+          <Route path="/resultadosSerie/:id"  component={SearchResultsSeries}/>     
+>>>>>>> aafcc324a0a6b77751c9811cb4f8e6493104998a
           <Route component={Error404} />
       </Switch>
     <footer><Footer /></footer>
