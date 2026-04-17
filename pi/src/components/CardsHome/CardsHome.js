@@ -41,7 +41,7 @@ render(){
          <section className="row cards" > 
             {this.state.movies === null ? 
              <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
-             this.state.movies.slice(0,4).map((pelicula ,idx) => (
+             this.state.movies.map.slice(0,4)((pelicula ,idx) => (
                     <CardHomeMovie
                       key={idx}
                       id={pelicula.id}
@@ -62,7 +62,7 @@ render(){
          <section className="row cards" >
           {this.state.series === null ? 
              <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
-             this.state.series.slice(0,4).map((serie , idx) => (
+             this.state.series.map.slice(0,4)((serie , idx) => (
          
                     <CardHomeSerie
                       key={idx}
