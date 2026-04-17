@@ -58,7 +58,8 @@ class CardHomeSerie extends Component {
             <div className="cardBody">
                  <h5 className="card-title"> {this.props.titulo}</h5>
                  {descripcion}
-                 <button onClick={()=> this.btnVerMas()}>{btn}</button> <br></br>
+                 <button onClick={()=> this.btnVerMas()} className="ver-mas">{btn}</button>
+                  <br></br><br/><br/>
                  <Link to = {"/detalleSerie/" + this.props.id}  className="link-Detalle"> Ir a detalle  </Link>
                     <br/><br/>
                     {this.state.esFavorito ? null : (

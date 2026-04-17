@@ -53,7 +53,7 @@ class CardSerie extends Component {
                 <div className="cardBody">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.overview}</p>
-                    <Link to={"/detalleSerie/" + item.id} className="ver-mas">Ver más</Link>
+                    <Link to={"/detalleSerie/" + item.id} className="ver-mas">Ir a detalle</Link>
                     <br/><br/>
                     {this.state.esFavorito ? null : (
                         <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
