@@ -1,5 +1,6 @@
 import { Component } from "react";
 import {  Link } from "react-router-dom";
+import "./CardDetalleSerie.css"
 import DetallesSeries from "../../Screens/DetallesSeries/DetallesSeries";
 
 
@@ -48,9 +49,9 @@ class CardDetalleSerie extends Component {
             <section className="col-md-6 info">
               <h3 className="card-title"> {this.props.titulo}</h3>
               <p className="description">{this.props.descripcion}</p>
-              <p className="mt-0 mb-0">Fecha de estreno: {this.props.estreno}</p>
-              <p className="mt-0 mb-">Clasifiacion: {this.props.rating}</p>
-              <p className="mt-0 mb-">Genero: {this.props.genero[0].name}</p>
+              <p className="mt-0 mb-0"> <strong>Fecha de estreno: </strong> {this.props.estreno}</p>
+              <p className="mt-0 mb-"> <strong>Clasifiacion: </strong>{this.props.rating}</p>
+              <p className="mt-0 mb-"> <strong>Genero: </strong>{this.props.genero[0].name}</p>
               {this.state.esFavorito ? null : (
                   <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
                             ♥️ Agregar a favoritos
