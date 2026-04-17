@@ -96,9 +96,9 @@ class Favoritos extends Component {
                             <img src={"https://image.tmdb.org/t/p/w500" + item.poster_path} className="card-img-top" alt={item.title} />
                             <div className="cardBody">
                                 <h5 className="card-title">{item.title}</h5>
-                                <Link to={"/detallePelicula/" + item.id} className="btn btn-primary">Ver más</Link>
+                                <Link to={"/detallePelicula/" + item.id} className="ver-mas">Ver más</Link>
                                 <br/><br/>
-                                <button className="btn btn-warning" onClick={() => this.eliminarPelicula(item.id)}>
+                                <button className="favorito-boton" onClick={() => this.eliminarPelicula(item.id)}>
                                     ♥️ Eliminar
                                 </button>
                             </div>
@@ -113,8 +113,9 @@ class Favoritos extends Component {
                             <img src={"https://image.tmdb.org/t/p/w500" + item.poster_path} className="card-img-top" alt={item.name} />
                             <div className="cardBody">
                                 <h5 className="card-title">{item.name}</h5>
-                                <Link to={"/detalleSerie/" + item.id} className="btn btn-primary">Ver más</Link>
-                                <button className="btn btn-warning" onClick={() => this.eliminarSerie(item.id)}>
+                                <Link to={"/detalleSerie/" + item.id} className="ver-mas">Ver más</Link>
+                                <br/><br/>
+                                <button className="favorito-boton" onClick={() => this.eliminarSerie(item.id)}>
                                     ♥️ Eliminar 
                                 </button>
                             </div>

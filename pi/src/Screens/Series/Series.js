@@ -34,9 +34,7 @@ enviarFormulario(event) {
         this.props.history.push("/resultadosSeries/" + this.state.filtro)
     }
 }
-ejecutarBusqueda(item){
-        this.props.history.push("/resultadosSeries/" + item.name)
-}
+
     cargarMas() {
         this.paginaActual = this.paginaActual + 1;
         fetch(`https://api.themoviedb.org/3/tv/airing_today?api_key=ed64b41cac1f7454df1403e56e96ce49&page=${this.paginaActual}`)
@@ -56,10 +54,6 @@ ejecutarBusqueda(item){
                         <input type="submit" value="Buscar" />
                     </form>
                 </div>
-                    {seriesFiltradas.map((item, idx) => 
-                        <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
-                        </article>
-                    )}
                 <h2 className='TituloSerie'>Todas las series</h2>
                 <br/>
                 <div className="contenedor-boton-cargar">

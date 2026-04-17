@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import "./CardMovie.css"
 class CardPelicula extends Component {
     constructor(props) {
         super(props);
@@ -54,11 +54,11 @@ class CardPelicula extends Component {
                 />
                 <div className="cardBody">
                     <h5 className="card-title">{item.title}</h5>
-                    <p className="card-text">{item.overview}</p>
-                    <Link to={"/detallePelicula/" + item.id} className="btn btn-primary">Ver más</Link>
+                    <p className="">{item.overview}</p>
+                    <Link to={"/detallePelicula/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
                     {this.state.esFavorito ? null : (
-                        <button className="btn btn-warning" onClick={() => this.agregarFavorito()}>
+                        <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
                             ♥️ Agregar a favoritos
                         </button>
                     )}

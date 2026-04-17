@@ -31,9 +31,6 @@ enviarFormulario(event) {
         this.props.history.push("/resultadosPelicula/" + this.state.filtro)
     }
 }
-ejecutarBusqueda(item){
-        this.props.history.push("/resultadosPelicula/" + item.title)
-}
     
 
     cargarMas() {
@@ -54,10 +51,6 @@ ejecutarBusqueda(item){
                         <input type="submit" value="Buscar" />
                     </form>
                 </div>
-                    {peliculasFiltradas.map((item, idx) => 
-                        <article key={item.id + idx} onClick={() => this.ejecutarBusqueda(item)}>
-                        </article>
-                    )}
                 <br/>
                 <h2 className='TituloMovie'>Todas las películas</h2>
                 <div className="contenedor-boton-cargar">
