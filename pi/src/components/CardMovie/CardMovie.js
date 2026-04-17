@@ -5,8 +5,9 @@ class CardPelicula extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            verMas: false,
             informacionItem: props.data,
-            esFavorito: false
+            esFavorito: false,
         }
     }
 
@@ -40,11 +41,20 @@ class CardPelicula extends Component {
     }
 
 
-
+    btnVerMas(){
+        this.setState(
+             {verMas: !this.state.verMas})
+    }
     
     render() {
         let item = this.state.informacionItem;
-
+        let btn = "Ver descrpcion"
+        let descripcion = null        
+        if (this.state.verMas === true) {
+            btn = "Ocultar"
+            descripcion = <p className="card-text" > {item.overview}</p>
+        }
+        
     return (
             <article className="single-card-movie">
                 <img
@@ -54,7 +64,8 @@ class CardPelicula extends Component {
                 />
                 <div className="cardBody">
                     <h5 className="card-title">{item.title}</h5>
-                    <p className="">{item.overview}</p>
+                    {descripcion}
+                    <button onClick={()=> this.btnVerMas()} className="ver-mas">{btn}</button> <br/>
                     <Link to={"/detallePelicula/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
                     {this.state.esFavorito ? null : (

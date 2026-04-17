@@ -66,6 +66,7 @@ enviarFormulario(event) {
                                 <CardMovie
                                     key={indice}
                                     data={pelicula}
+                                    
                                 />
                             )
                         })

@@ -38,11 +38,18 @@ class CardSerie extends Component {
         this.setState({ esFavorito: true });
     }
 
-
+    btnVerMas(){
+        this.setState(
+             {verMas: !this.state.verMas})
+    }
     render() {
-
         let item = this.state.informacionItem;
-
+        let btn = "Ver descrpcion"
+        let descripcion = null        
+        if (this.state.verMas === true) {
+            btn = "Ocultar"
+            descripcion = <p className="card-text" > {item.overview}</p>
+        }
     return (
             <article className="single-card-tv">
                 <img
@@ -52,7 +59,8 @@ class CardSerie extends Component {
                 />
                 <div className="cardBody">
                     <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.overview}</p>
+                    {descripcion}
+                    <button onClick={()=> this.btnVerMas()} className="ver-mas">{btn}</button> <br/>
                     <Link to={"/detalleSerie/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
                     {this.state.esFavorito ? null : (

@@ -6,7 +6,6 @@ import Header from './components/Header/Header';
 import Home from "./Screens/Home/Home"
 import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
 import Favoritos from "./Screens/Favoritos/Favoritos";
-import Register from "./components/Register/Register"
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
 import Series from "./Screens/Series/Series";
@@ -22,7 +21,6 @@ function App() {
       <Switch>
           <Route path='/' exact= {true} component= {Home}/>
           <Route path='/crear' component= {CrearCuenta}/>
-          <Route path='/login' component= {Register}/>
           <Route path='/peliculas' component={Peliculas}/>
           <Route path='/series' component={Series}/>
           <Route path='/detallePelicula/:id' component={DetallesMovies} />

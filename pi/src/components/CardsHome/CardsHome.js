@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import CardHomeMovie from "../CardHomeMovie/CardHomeMovie";
-import CardHomeSerie from "../CardHomeSerie/CardHomeSerie";
+import CardHomeMovie from "../CardMovie/CardMovie";
+import CardHomeSerie from "../CardSerie/CardSerie";
 
 
 
@@ -10,7 +10,9 @@ class CardsHome extends Component{
         super(props)
         this.state = {
             movies: null,
-            series: null
+            series: null,
+            filtro: '',
+            numerador:0
         }
     }
 
@@ -29,12 +31,49 @@ componentDidMount( ){
   ))
   .catch(err => console.error(err));
 }
+cambionum1(){
+    this.setState(
+    {numerador: 1}
+  )
+}
+cambionum2(){
+    this.setState(
+    {numerador: 2}
+  )
+}
+    controlarCambios(evento) {
+        this.setState({ filtro: evento.target.value });
+    }
 
+enviarFormulario(event) {
+    event.preventDefault();
 
+    if (this.state.filtro != "") {
+      if (this.state.numerador == 0) {
+        this.props.history.push("/resultadosPelicula/" + this.state.filtro)
+      }else{
+        this.props.history.push("/resultadosSeries/" + this.state.filtro)
+      }
+    }
+}
 
 render(){
     return(
       <div>
+                <div className='barra-busqueda-peliculas'>
+                    <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
+                        <input type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
+                          <div>
+                            <input onClick={(event)=>this.cambionum1()}type="checkbox" id="task1" name="checklist" value="item1"/>
+                            <label for="task1">Peliculas</label>
+                          </div>
+                          <div>
+                            <input onClick={(event)=>this.cambionum2()}  type="checkbox" id="task1" name="checklist" value="item1"/>
+                            <label for="task1">Series</label>
+                          </div>
+                        <input type="submit" value="Buscar" />
+                    </form>
+                </div>        
        <div className="cards-title">
          <h2 className="TituloHome">Peliculas mas populares </h2>
         </div> 
@@ -46,10 +85,6 @@ render(){
                     <CardHomeMovie
                       data={pelicula}
                       key={idx}
-                      id={pelicula.id}
-                      titulo={pelicula.title}
-                      imagen={pelicula.poster_path}
-                      descripcion={pelicula.overview}
                     />
                 )
 
@@ -69,10 +104,6 @@ render(){
                     <CardHomeSerie
                       data={serie}
                       key={idx}
-                      id= {serie.id}
-                      titulo={serie.name}
-                      imagen={serie.poster_path}
-                      descripcion={serie.overview}
                     />
                 )
 
