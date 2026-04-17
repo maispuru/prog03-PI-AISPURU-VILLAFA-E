@@ -51,7 +51,7 @@ class CardSerie extends Component {
             descripcion = <p className="card-text" > {item.overview}</p>
         }
     return (
-            <article className="single-card-tv">
+            <article className="single-card-movie">
                 <img
                     src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
                     className="card-img-top"

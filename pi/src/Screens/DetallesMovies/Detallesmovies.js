@@ -25,7 +25,8 @@ render() {
         <div> 
             {pelicula === null ?  <h3>CARGANDO...</h3> : 
             <CardDetalleMovie
-              imagen = {pelicula.poster_path}
+               data = {pelicula}
+               imagen = {pelicula.poster_path}
               titulo = {pelicula.title}
               descripcion = {pelicula.overview}
               estreno = {pelicula.release_date}

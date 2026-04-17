@@ -24,6 +24,7 @@ render() {
         <div> 
             {serie === null ?  <h3>CARGANDO...</h3> : 
             <CardDetalleSerie
+              data = {serie}
               imagen = {serie.poster_path}
               titulo = {serie.name}
               descripcion = {serie.overview}
