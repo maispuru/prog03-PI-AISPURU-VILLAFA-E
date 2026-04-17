@@ -55,6 +55,7 @@ render(){
 
 
          </section>
+           <Link to={"/peliculas"} className="link-verTodas">Ver todas las peliculas</Link>
            <div className="cards-title" >
              <h2 className="TituloHome">Series mas vistas esta semana</h2>
            </div>
@@ -75,7 +76,7 @@ render(){
             )}
 
          </section>
-
+           <Link to={"/series"} className="link-verTodas">Ver todas las series</Link>
       </div>
     )
    

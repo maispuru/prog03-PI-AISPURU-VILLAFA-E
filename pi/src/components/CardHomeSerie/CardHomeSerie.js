@@ -31,7 +31,7 @@ class CardHomeSerie extends Component {
                  <h5 className="card-title"> {this.props.titulo}</h5>
                  {descripcion}
                  <button onClick={()=> this.btnVerMas()}>{btn}</button> <br></br>
-                 <Link to = {"/detalleSerie/" + this.props.id}  className="btn btn-primary"> Ir a detalle  </Link>
+                 <Link to = {"/detalleSerie/" + this.props.id}  className="link-Detalle"> Ir a detalle  </Link>
 
             </div>
         </article>

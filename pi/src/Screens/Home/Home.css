@@ -47,6 +47,32 @@
     border-radius: 8px;
     margin: 20px 0 30px 20px;
 }
+ .link-verTodas {
+    display: block;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    color: #3f4e5e;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.link-verTodas:hover {
+    text-decoration: underline;
+}
+
+.link-Detalle {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    color: #3f4e5e;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.link-Detalle:hover {
+    text-decoration: underline;
+}
 
 @media(min-width: 765px){
     nav {
