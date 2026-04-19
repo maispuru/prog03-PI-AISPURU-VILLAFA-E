@@ -49,31 +49,33 @@ enviarFormulario(event) {
     event.preventDefault();
 
     if (this.state.filtro != "") {
-      if (this.state.numerador == 0) {
-        this.props.history.push("/resultadosPelicula/" + this.state.filtro)
-      }else{
-        this.props.history.push("/resultadosSeries/" + this.state.filtro)
-      }
+        if (this.state.numerador == 1) {
+            this.props.history.push("/resultadosPelicula/" + this.state.filtro)
+        } else if (this.state.numerador == 2) {
+            this.props.history.push("/resultadosSeries/" + this.state.filtro)
+        }
     }
 }
 
 render(){
     return(
       <div>
-                <div className='barra-busqueda-peliculas'>
-                    <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
-                        <input type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} />
-                          <div>
-                            <input onClick={(event)=>this.cambionum1()}type="checkbox" id="task1" name="checklist" value="item1"/>
-                            <label for="task1">Peliculas</label>
-                          </div>
-                          <div>
-                            <input onClick={(event)=>this.cambionum2()}  type="checkbox" id="task1" name="checklist" value="item1"/>
-                            <label for="task1">Series</label>
-                          </div>
-                        <input type="submit" value="Buscar" />
-                    </form>
-                </div>        
+        <div className='barra-busqueda-peliculas'>
+            <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
+                <input className="input-busqueda" type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} /> 
+                <div className="opciones-busqueda">
+                    <label className="opcion-radio">
+                        <input onChange={() => this.cambionum1()} type="radio" name="tipo" value="peliculas" />
+                        <span>Películas</span>
+                    </label>
+                    <label className="opcion-radio">
+                        <input onChange={() => this.cambionum2()} type="radio" name="tipo" value="series" />
+                        <span>Series</span>
+                    </label>
+                </div>
+        <input className="boton-busqueda" type="submit" value="Buscar" />
+    </form>
+</div>  
        <div className="cards-title">
          <h2 className="TituloHome">Peliculas mas populares </h2>
         </div> 

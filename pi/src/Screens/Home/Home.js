@@ -5,8 +5,8 @@ import "./Home.css";
 class Home extends Component {
     render(){
         return(
-            <div> 
-                <CardsHome/>
+            <div>       
+                <CardsHome history={this.props.history}/>
             </div>
         )
     }
