@@ -1,0 +1,80 @@
+
+.all-movies .single-card-series {
+    width: 15%;
+}
+
+.all-movies .card-img-top {
+    width: 1000%;
+    height: auto;
+}
+.barra-busqueda-series{
+    margin: 10px 0 0 20px;
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+.form-busqueda-movseriesies{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.input-busqueda-series{
+    width: 305px;
+    height: 48px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    display: block;
+}
+
+.TituloSeries{
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3f4e5e;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 0 0 6px 20px;
+}
+
+.cards.all-series{
+    margin-top: 0;
+    padding-top: 0;
+}
+.encabezado-series{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 10px 0 0px 20px;
+}
+
+.barra-busqueda-series{
+    margin: 0;
+}
+
+.TituloSeries{
+    margin: 0;
+    margin-bottom: 1%;
+}
+.boton-cargar-mas{
+    width: 18%;
+    padding: 0.9% 0;
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}

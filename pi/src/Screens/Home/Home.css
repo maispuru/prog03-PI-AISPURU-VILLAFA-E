@@ -99,13 +99,12 @@
 .form-busqueda-peliculas{
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 0px;
     flex-wrap: nowrap;
 }
 
 .input-busqueda{
     margin-top: 5%;
-    width: 1650px;
     height: 40px;
     font-size: 14px;
     border: 1px solid #bfc5cc;
@@ -118,7 +117,7 @@
 .opciones-busqueda{
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 0px;
 }
 
 .opcion-radio{
@@ -133,10 +132,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 36px;
+    height: 34px;
     padding: 0 14px;
     border: 1px solid #bfc5cc;
-    border-radius: 4px;
     background-color: white;
     color: #1f2d3d;
     font-size: 14px;
