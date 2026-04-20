@@ -12,7 +12,6 @@ import Series from "./Screens/Series/Series";
 import DetallesMovies from './Screens/DetallesMovies/Detallesmovies';
 import DetallesSeries from './Screens/DetallesSeries/DetallesSeries';
 
-
 function App() {
   return (
     <div className="App">

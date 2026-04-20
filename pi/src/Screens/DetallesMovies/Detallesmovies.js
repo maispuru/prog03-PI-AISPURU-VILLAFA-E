@@ -23,7 +23,7 @@ render() {
     let pelicula = this.state.movies
     return(
         <div> 
-            {pelicula === null ?  <h3>CARGANDO...</h3> : 
+            {pelicula === null ?  <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
             <CardDetalleMovie
                data = {pelicula}
                imagen = {pelicula.poster_path}

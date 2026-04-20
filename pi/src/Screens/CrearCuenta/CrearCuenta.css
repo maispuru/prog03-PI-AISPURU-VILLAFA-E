@@ -31,3 +31,13 @@ form button {
     border-radius: 2%;
     font-size: 100%;
 }
+.TituloCrear{
+        display: inline-block;
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3f4e5e;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 20px 0 30px 20px;
+}

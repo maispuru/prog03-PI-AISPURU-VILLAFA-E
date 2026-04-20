@@ -22,7 +22,7 @@ render() {
     let serie = this.state.serie
     return(
         <div> 
-            {serie === null ?  <h3>CARGANDO...</h3> : 
+            {serie === null ?  <p><img src={`/img/Gif.gif`} alt="..Cargando" /></p> : 
             <CardDetalleSerie
               data = {serie}
               imagen = {serie.poster_path}

@@ -59,7 +59,7 @@ enviarFormulario(event) {
 
 render(){
     return(
-      <div>
+      <div  className="contenedor-general-buscador">
         <div className='barra-busqueda-peliculas'>
             <form className='form-busqueda-peliculas' onSubmit={(event)=>this.enviarFormulario(event)}>
                 <input className="input-busqueda" type="text" placeholder="Buscar películas" onChange={(event)=>this.controlarCambios(event)} value={this.state.filtro} /> 
