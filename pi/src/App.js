@@ -3,8 +3,9 @@ import Error404 from "./components/Error404/Error404";
 import SearchResultsPelis from "./Screens/SearchResultsMovies/SearchResultsMovies";
 import SearchResultsSeries from "./Screens/SearchResultsSerie/SearchResultsSerie";
 import Header from './components/Header/Header';
-import Home from "./Screens/Home/Home"
-import CrearCuenta from "./Screens/CrearCuenta/CrearCuenta"
+import Home from "./Screens/Home/Home";
+import CrearCuenta from "./Screens/CrearCuenta/CrearCuenta";
+import Login from "./Screens/Login/Login";
 import Favoritos from "./Screens/Favoritos/Favoritos";
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
@@ -20,6 +21,7 @@ function App() {
       <Switch>
           <Route path='/' exact= {true} component= {Home}/>
           <Route path='/register' component= {CrearCuenta}/>
+          <Route path='/login' component={Login} />
           <Route path='/peliculas' component={Peliculas}/>
           <Route path='/series' component={Series}/>
           <Route path='/detallePelicula/:id' component={DetallesMovies} />
