@@ -34,8 +34,11 @@ class Login extends Component {
         });
 
         if (usersFiltrado.length > 0) {
-            let indice = usersParseado.Email.indexOf(email);
-            if (usersParseado.Password[indice] === password) {
+            let passwordFiltrado = usersParseado.Password.filter((pass, i) => {
+                return usersParseado.Email[i] == email;
+            });
+
+            if (passwordFiltrado[0] === password) {
                 cookies.set('user-auth-cookie', email);
                 this.setState({ loginExitoso: true, error: "" });
             } else {
