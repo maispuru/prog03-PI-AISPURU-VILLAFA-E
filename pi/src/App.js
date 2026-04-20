@@ -4,7 +4,7 @@ import SearchResultsPelis from "./Screens/SearchResultsMovies/SearchResultsMovie
 import SearchResultsSeries from "./Screens/SearchResultsSerie/SearchResultsSerie";
 import Header from './components/Header/Header';
 import Home from "./Screens/Home/Home"
-import CrearCuenta from "./components/CrearCuenta/CrearCuenta"
+import CrearCuenta from "./Screens/CrearCuenta/CrearCuenta"
 import Favoritos from "./Screens/Favoritos/Favoritos";
 import Footer from "./components/Footer/Footer"
 import Peliculas from "./Screens/Movies/Movies";
@@ -20,7 +20,7 @@ function App() {
 
       <Switch>
           <Route path='/' exact= {true} component= {Home}/>
-          <Route path='/crear' component= {CrearCuenta}/>
+          <Route path='/register' component= {CrearCuenta}/>
           <Route path='/peliculas' component={Peliculas}/>
           <Route path='/series' component={Series}/>
           <Route path='/detallePelicula/:id' component={DetallesMovies} />

@@ -28,7 +28,7 @@ class Header extends Component{
                                 <Link to="/series" className="nav-link">Series</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/crear" className="nav-link">Crear Cuenta</Link>
+                                <Link to="/register" className="nav-link">Crear Cuenta</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/favoritos" className="nav-link">Favoritos</Link>
