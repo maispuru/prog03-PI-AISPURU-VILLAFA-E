@@ -1,9 +1,11 @@
 import { Component } from "react";
 import {  Link } from "react-router-dom";
 import "./CardDetalleSerie.css"
+import Cookies from "universal-cookie";
 import DetallesSeries from "../../Screens/DetallesSeries/DetallesSeries";
 
 
+const cookies = new Cookies();
 class CardDetalleSerie extends Component {
     constructor(props){
         super(props)
@@ -39,9 +41,11 @@ class CardDetalleSerie extends Component {
         localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
         this.setState({ esFavorito: true });
     }
+
+
   
     render(){
-
+        let user = cookies.get("user-auth-cookie")
         return(
          
           <section className="detalle-container">
@@ -51,12 +55,14 @@ class CardDetalleSerie extends Component {
               <p className="description">{this.props.descripcion}</p>
               <p className="mt-0 mb-0"> <strong>Fecha de estreno: </strong> {this.props.estreno}</p>
               <p className="mt-0 mb-"> <strong>Clasifiacion: </strong>{this.props.rating}</p>
-              <p className="mt-0 mb-"> <strong>Genero: </strong>{this.props.genero[0].name}</p>
-              {this.state.esFavorito ? null : (
+              <p className="mt-0 mb-"> <strong>Genero: </strong>{this.props.genero.name}</p>
+              {user ? (
+                 this.state.esFavorito ? null : (
                   <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
                             ♥️ Agregar a favoritos
                  </button>
-              )}
+               ) ) : null }
+
              </section>
 
                 

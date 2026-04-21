@@ -31,7 +31,7 @@ render() {
               descripcion = {pelicula.overview}
               estreno = {pelicula.release_date}
               rating = {pelicula.vote_average}
-              genero = {pelicula.genres}
+              genero = {pelicula.genres[0]}
               duracion = {pelicula.runtime}
 
             />

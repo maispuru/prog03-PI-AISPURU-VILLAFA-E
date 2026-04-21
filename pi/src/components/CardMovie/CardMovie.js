@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 import "./CardMovie.css"
+
+const cookies = new Cookies();
 class CardPelicula extends Component {
     constructor(props) {
         super(props);
@@ -47,6 +50,7 @@ class CardPelicula extends Component {
     }
     
     render() {
+        let user = cookies.get("user-auth-cookie")
         let item = this.state.informacionItem;
         let btn = "Ver descrpcion"
         let descripcion = null        
@@ -68,11 +72,14 @@ class CardPelicula extends Component {
                     <button onClick={()=> this.btnVerMas()} className="ver-mas">{btn}</button> <br/>
                     <Link to={"/detallePelicula/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
-                    {this.state.esFavorito ? null : (
-                        <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
-                            ♥️ Agregar a favoritos
-                        </button>
-                    )}
+                      {user ? (
+                       this.state.esFavorito ? null : (
+                         <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
+                                 ♥️ Agregar a favoritos
+                         </button>
+                        )
+                       ) : null }
+
                 </div>
             </article>
         )

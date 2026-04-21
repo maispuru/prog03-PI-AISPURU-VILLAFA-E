@@ -1,13 +1,20 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import './Header.css'
+import Cookies from 'universal-cookie';
+import './Header.css';
 
+const cookies = new Cookies();
 class Header extends Component{
     constructor(props){
         super(props);
     }
 
+    logout(){
+        cookies.remove("user-auth-cookie")
+
+    }
     render (){
+      let user = cookies.get("user-auth-cookie")
         return(
             <nav className="main-header">
                 <div className="header-contenido">
@@ -27,15 +34,32 @@ class Header extends Component{
                             <li className="nav-item">
                                 <Link to="/series" className="nav-link">Series</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/register" className="nav-link">Crear Cuenta</Link>
-                            </li>
-                            <li className="nav-item">
+
+                            {!user ? (
+                              <>
+                                <li className="nav-item">
+                                <Link to="/register" className="nav-link">Crear Cuenta</Link> 
+                                </li>
+                                <li className="nav-item">
                                 <Link to="/Login" className="nav-link">Login</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/favoritos" className="nav-link">Favoritos</Link>
-                            </li>
+                                 </li>
+                               </>
+                            )
+                            : null}
+                             
+                             {user ? (
+                                <>
+                                <li className="nav-item">
+                                  <Link to="/favoritos" className="nav-link">Favoritos</Link>
+                                </li>
+                                <li>
+                                    <button onClick={()=> this.logout()}>Cerrar sesion</button>
+
+                                </li>
+                               </>
+                             )
+                             :null}
+                
                         </ul>
                     </div>
                 </div>

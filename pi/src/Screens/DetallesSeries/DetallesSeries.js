@@ -30,7 +30,7 @@ render() {
               descripcion = {serie.overview}
               estreno = {serie.first_air_date}
               rating = {serie.vote_average}
-              genero = {serie.genres}
+              genero = {serie.genres[0]}
 
             />
              } 
