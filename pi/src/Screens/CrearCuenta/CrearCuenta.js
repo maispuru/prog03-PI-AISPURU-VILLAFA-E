@@ -49,19 +49,19 @@ onSubmit(email, password){
             usersParseado.Password.push(password)
             localStorage.setItem("Usuario", JSON.stringify(usersParseado))
             cookies.set('user-auth-cookie', email)
-        } else {
-            this.setState({ error: "El email ya existe" })
-            return
-        }
+            this.setState({ error: "" })
+        } 
+        this.setState({ error: "El email ya existe" })
+        return
     } else {
         this.setState({ error: "La Password debe tener 6 caracteres o mas" })
         return
     }
-    console.log(localStorage)
 }
 enviarFormulario(event) {
     event.preventDefault();
-    
+    this.props.history.push("/Login")
+
 }
 
 render(){

@@ -51,6 +51,7 @@ class Login extends Component {
 
     enviarFormulario(event) {
         event.preventDefault();
+        this.props.history.push("/")
     }
 
     render() {
