@@ -53,7 +53,7 @@ class Header extends Component{
                                   <Link to="/favoritos" className="nav-link">Favoritos</Link>
                                 </li>
                                 <li>
-                                    <button onClick={()=> this.logout()}>Cerrar sesion</button>
+                                    <button className="btn-logout" onClick={()=> this.logout()}>Cerrar sesion</button>
 
                                 </li>
                                </>
