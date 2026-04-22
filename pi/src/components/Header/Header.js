@@ -11,7 +11,7 @@ class Header extends Component{
 
     logout(){
         cookies.remove("user-auth-cookie")
-
+        
     }
     render (){
       let user = cookies.get("user-auth-cookie")
