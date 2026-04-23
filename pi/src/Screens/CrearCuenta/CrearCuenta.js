@@ -25,43 +25,41 @@ onSubmit(email, password){
         password: password
     }
     let usersStorage = localStorage.getItem("Usuario")
-    let usersParseado = {
-        Email: [],
-        Password: []
-    }
-    if (usersStorage != null) {
-        try {
-            usersParseado = JSON.parse(usersStorage)
-        } catch(error) {
-            usersParseado = {
-                Email: [],
-                Password: []
-            }
+    let usersParseado
+    if (usersStorage == null) {
+        usersParseado = {
+            Email: [],
+            Password: []
         }
-    }
-    if (usuarioACrear.password.length >= 6) {
-        let emailFiltro = usersParseado.Email
-        let usersFiltrado = emailFiltro.filter((favorito) => {
-            return favorito == usuarioACrear.email
-        })
-        if (usersFiltrado.length == 0) {
-            usersParseado.Email.push(email)
-            usersParseado.Password.push(password)
-            localStorage.setItem("Usuario", JSON.stringify(usersParseado))
-            cookies.set('user-auth-cookie', email)
-            this.setState({ error: "" })
-        } 
-        this.setState({ error: "El email ya existe" })
-        return
     } else {
+        usersParseado = JSON.parse(usersStorage)
+    }
+    if (usuarioACrear.password.length < 6) {
         this.setState({ error: "La Password debe tener 6 caracteres o mas" })
         return
     }
+    let emailFiltro = usersParseado.Email
+    let usersFiltrado = emailFiltro.filter((favorito) => {
+        return favorito == usuarioACrear.email
+    })
+    if (usersFiltrado.length > 0) {
+        this.setState({ error: "El email ya existe" })
+        return
+    }
+    usersParseado.Email.push(email)
+    usersParseado.Password.push(password)
+    localStorage.setItem("Usuario", JSON.stringify(usersParseado))
+    cookies.set('user-auth-cookie', email)
+    this.setState({ error: "" })
+    this.props.history.push("/Login")
+}
+
+enviarFormulario(event) {
+    event.preventDefault();
+    this.onSubmit(this.state.email, this.state.password)
 }
 enviarFormulario(event) {
     event.preventDefault();
-    this.props.history.push("/Login")
-
 }
 
 render(){
