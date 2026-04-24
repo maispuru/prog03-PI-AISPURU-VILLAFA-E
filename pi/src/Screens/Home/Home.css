@@ -161,7 +161,7 @@
     display: none;
 }
 
-.opcion-radio span{
+.opcion-radio {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +178,7 @@
     white-space: nowrap;
 }
 
-.opcion-radio input:checked + span{
+.opcion-radio input{
     background-color: #3f4e5e;
     color: white;
     border-color: #3f4e5e;
@@ -205,9 +205,8 @@
 .boton-busqueda:hover{
     background-color: #2f3b4d;
 }
-@media(min-width: 765px){
-    nav {
-        grid-template-columns: 1fr;
+@media(max-width: 765px){
+    .TituloHome{
+        font-size: 100%;
     }
 }
-

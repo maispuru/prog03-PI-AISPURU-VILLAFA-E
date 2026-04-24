@@ -34,15 +34,7 @@
     position: relative;
 }
 
-.logo::after{
-    content: "";
-    display: block;
-    width: 28%;
-    height: 3px;
-    background-color: #c7d0d9;
-    margin-top: 3%;
-    border-radius: 10px;
-}
+
 
 .frase-header{
     color: rgba(255,255,255,0.78);
@@ -74,15 +66,28 @@
     border-radius: 8px;
     font-size: 95%;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 .nav-link:hover{
     background-color: rgba(255,255,255,0.18);
-    transform: translateY(-2px);
 }
 
 .btn-logout {
     background-color: rgba(255,255,255,0.18);
     color: white;
+}
+
+@media(max-width: 765px){
+    nav {
+        grid-template-columns: 1fr;
+    }
+    .logo{
+        font-size: 100%;
+    }
+    .frase-header{
+        font-size: 60%;
+    }
+    .nav-link{
+        font-size: 50%;
+    }
 }
