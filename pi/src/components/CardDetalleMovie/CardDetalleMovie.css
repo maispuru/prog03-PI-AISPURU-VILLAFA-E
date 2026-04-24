@@ -42,3 +42,49 @@
     color: #000000;
     margin: 4px 0;
 }
+
+@media (max-width: 420px) {
+    .detalle-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .detalle-container img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .info {
+        max-width: 100%;
+        width: 100%;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .info .card-title {
+        font-size: 1.6rem;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+
+    .info .description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .info p {
+        font-size: 0.9rem;
+    }
+
+    .favorito-boton {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 10px;
+    }
+}

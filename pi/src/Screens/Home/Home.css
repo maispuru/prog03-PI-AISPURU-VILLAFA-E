@@ -3,14 +3,14 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1rem 2rem;
     margin-bottom: 2%;
 }
 
 .single-card-movie {
-    width: 23%;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -21,6 +21,8 @@
 }
 
 .cardBody {
+    display: flex;
+    flex-direction: column;
     padding: 10px 0;
 }
 
@@ -83,10 +85,13 @@
     border: none;
     border-radius: 6px;
     font-size: 15px;
+    text-align: center;
     font-weight: 600;
     transition: 0.3s;
 }
-
+.card-title{
+    min-height: 3.6rem;
+}
 .ver-mas:hover{
     background-color: #2f3b4d;
     color: white;
@@ -206,11 +211,40 @@
     background-color: #2f3b4d;
 }
 @media(max-width: 420px){
-    .TituloHome{
-        font-size: 100%;
 
-    }
+    
+    .TituloHome{
+        font-size: 20px;
+        display: block;
+        text-align: center;
+        padding: 8px 16px;
+        margin: 15px 10px 20px 10px;
     
 
+    }
 
+     .single-card-movie {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+        flex: 1 1 100%;
+        display: block;
+    }
+
+ .single-card-movie .card-img-top {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+ 
+    .ver-mas,
+    .favorito-boton {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 8px;
+    }
+
+
+ 
 }

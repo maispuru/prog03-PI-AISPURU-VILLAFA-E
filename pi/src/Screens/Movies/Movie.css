@@ -102,3 +102,47 @@
     height: auto !important;
     display: block !important;
 }
+
+@media(max-width: 420px){
+
+    .TituloMovie{
+        font-size: 20px;
+        display: block;
+        text-align: center;
+        padding: 8px 16px;
+        margin: 15px 10px 20px 10px;
+    
+
+    }
+    .card-title{
+        font-size: 20px;
+        display: block;
+        text-align: center;
+        padding: 8px 16px;
+        margin: 15px 10px 20px 10px;
+    
+
+    }
+
+     .single-card-movie {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+        flex: 1 1 100%;
+        display: block;
+    }
+
+ .single-card-movie .card-img-top {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+ 
+    .ver-mas,
+    .favorito-boton {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 8px;
+    }
+}

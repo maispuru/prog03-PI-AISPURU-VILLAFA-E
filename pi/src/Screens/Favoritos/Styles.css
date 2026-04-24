@@ -103,7 +103,7 @@ nav {
     height: auto;
 }
 
-@media(min-width: 765px){
+@media(max-width: 420px){
     nav {
         grid-template-columns: 1fr;
     }
