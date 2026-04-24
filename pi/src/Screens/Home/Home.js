@@ -6,7 +6,7 @@ class Home extends Component {
     render(){
         return(
             <div>       
-                <CardsHome history={this.props.history}/>
+                <CardsHome/>
             </div>
         )
     }

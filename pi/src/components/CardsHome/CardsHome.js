@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import CardHomeMovie from "../CardMovie/CardMovie";
+import {withRouter} from "react-router-dom";
 import CardHomeSerie from "../CardSerie/CardSerie";
 
 
@@ -120,4 +121,4 @@ render(){
 
 }
 
-export default CardsHome
+export default  withRouter (CardsHome);
