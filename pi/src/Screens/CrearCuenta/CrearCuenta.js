@@ -77,7 +77,7 @@ render(){
                     </div>
                     <button type="submit">Crear cuenta</button>
                 </form>
-                {this.state.error != "" ? <p>{this.state.error}</p> : null}
+                {this.state.error != "" ? <p className='titulo-error'>{this.state.error}</p> : null}
     </section>
     )
     }

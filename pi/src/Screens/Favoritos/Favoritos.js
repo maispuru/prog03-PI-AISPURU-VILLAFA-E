@@ -93,7 +93,7 @@ class Favoritos extends Component {
         return (
             <div className="container">
 
-                <h2 className="alert alert-primary">Películas Favoritas</h2>
+                <h2 className="titulo">Películas Favoritas</h2>
                 <section className="row cards" id="movies">
                     {this.state.peliculasFavoritas.map((item, indice) =>
                         <article key={item.id + indice} className="single-card-movie">
@@ -110,7 +110,7 @@ class Favoritos extends Component {
                     )}
                 </section>
 
-                <h2 className="alert alert-warning">Series Favoritas</h2>
+                <h2 className="titulo">Series Favoritas</h2>
                 <section className="row cards" id="tv-show">
                     {this.state.seriesFavoritas.map((item, indice) =>
                         <article key={item.id + indice} className="single-card-tv">

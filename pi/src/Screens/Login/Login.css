@@ -41,3 +41,15 @@ form button {
     border-radius: 8px;
     margin: 20px 0 30px 20px;
 }
+.titulo-error{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: red;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 20px 0 30px 20px;
+}
