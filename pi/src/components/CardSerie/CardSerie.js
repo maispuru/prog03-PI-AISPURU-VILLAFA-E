@@ -39,10 +39,23 @@ class CardSerie extends Component {
         localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
         this.setState({ esFavorito: true });
     }
+    eliminarSerie(id) {
+        let favoritosGuardados = localStorage.getItem("favoritos") || "[]";
+        let favoritos = JSON.parse(favoritosGuardados);
+
+        let favoritosFiltrados = favoritos.filter((favorito) => {
+            return favorito.id !== id || favorito.tipo !== "serie";
+        });
+
+        localStorage.setItem("favoritos", JSON.stringify(favoritosFiltrados));
+
+        this.setState({esFavorito: false})
+    }
 
     btnVerMas(){
         this.setState(
              {verMas: !this.state.verMas})
+
     }
     render() {
         let user = cookies.get("user-auth-cookie")
@@ -66,12 +79,17 @@ class CardSerie extends Component {
                     <button onClick={()=> this.btnVerMas()} className="ver-mas">{btn}</button> <br/>
                     <Link to={"/detalleSerie/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
-                       {user ? (
-                       this.state.esFavorito ? null : (
-                         <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
-                                ♥️ Agregar a favoritos
-                         </button>
-                      )) : null }
+                     {user ? (
+                       this.state.esFavorito === false ? 
+                       <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
+                                 ♥️ Agregar a favoritos
+                         </button>  : (
+                         <button className="favorito-boton" onClick={() => this.eliminarSerie(item.id)}>
+                                    ♥️ Eliminar
+                        </button>
+                        )
+                       ) : null }
+
 
                 </div>
             </article>

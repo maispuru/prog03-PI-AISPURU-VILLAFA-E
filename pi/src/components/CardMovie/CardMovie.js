@@ -11,6 +11,8 @@ class CardPelicula extends Component {
             verMas: false,
             informacionItem: props.data,
             esFavorito: false,
+    
+            
         }
     }
 
@@ -42,7 +44,19 @@ class CardPelicula extends Component {
         localStorage.setItem("favoritos", JSON.stringify(favoritosActualizados));
         this.setState({ esFavorito: true });
     }
+   
+    eliminarPelicula(id) {
+        let favoritosGuardados = localStorage.getItem("favoritos") || "[]";
+        let favoritos = JSON.parse(favoritosGuardados);
 
+        let favoritosFiltrados = favoritos.filter((favorito) => {
+            return favorito.id !== id || favorito.tipo !== "pelicula";
+        });
+
+        localStorage.setItem("favoritos", JSON.stringify(favoritosFiltrados));
+
+        this.setState ({esFavorito: false});
+    }
 
     btnVerMas(){
         this.setState(
@@ -73,12 +87,17 @@ class CardPelicula extends Component {
                     <Link to={"/detallePelicula/" + item.id} className="ver-mas">Ver más</Link>
                     <br/><br/>
                       {user ? (
-                       this.state.esFavorito ? null : (
-                         <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
+                       this.state.esFavorito === false ? 
+                       <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
                                  ♥️ Agregar a favoritos
-                         </button>
+                         </button>  : (
+                         <button className="favorito-boton" onClick={() => this.eliminarPelicula(item.id)}>
+                                    ♥️ Eliminar
+                        </button>
                         )
                        ) : null }
+
+
 
                 </div>
             </article>

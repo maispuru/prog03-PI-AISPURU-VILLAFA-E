@@ -42,6 +42,19 @@ class CardDetalleSerie extends Component {
         this.setState({ esFavorito: true });
     }
 
+  eliminarSerie(id) {
+        let favoritosGuardados = localStorage.getItem("favoritos") || "[]";
+        let favoritos = JSON.parse(favoritosGuardados);
+
+        let favoritosFiltrados = favoritos.filter((favorito) => {
+            return favorito.id !== id || favorito.tipo !== "serie";
+        });
+
+        localStorage.setItem("favoritos", JSON.stringify(favoritosFiltrados));
+
+        this.setState({esFavorito: false})
+    }
+
 
   
     render(){
@@ -56,12 +69,16 @@ class CardDetalleSerie extends Component {
               <p className="mt-0 mb-0"> <strong>Fecha de estreno: </strong> {this.props.estreno}</p>
               <p className="mt-0 mb-"> <strong>Clasifiacion: </strong>{this.props.rating}</p>
               <p className="mt-0 mb-"> <strong>Genero: </strong>{this.props.genero.name}</p>
-              {user ? (
-                 this.state.esFavorito ? null : (
-                  <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
-                            ♥️ Agregar a favoritos
-                 </button>
-               ) ) : null }
+               {user ? (
+                       this.state.esFavorito === false ? 
+                       <button className="favorito-boton" onClick={() => this.agregarFavorito()}>
+                                 ♥️ Agregar a favoritos
+                         </button>  : (
+                         <button className="favorito-boton" onClick={() => this.eliminarSerie(this.props.id)}>
+                                    ♥️ Eliminar
+                        </button>
+                        )
+                       ) : null }
 
              </section>
 
