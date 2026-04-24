@@ -41,6 +41,7 @@ class Login extends Component {
             if (passwordFiltrado[0] === password) {
                 cookies.set('user-auth-cookie', email);
                 this.setState({ loginExitoso: true, error: "" });
+                this.props.history.push("/")
             } else {
                 this.setState({ error: "Credenciales incorrectas" });
             }
@@ -51,7 +52,6 @@ class Login extends Component {
 
     enviarFormulario(event) {
         event.preventDefault();
-        this.props.history.push("/")
     }
 
     render() {
