@@ -23,16 +23,16 @@ class Favoritos extends Component {
         if (favoritos.length === 0) {
             return;
         }
-
-        for (let i = 0; i < favoritos.length; i++) {
-            let favorito = favoritos[i];
-
-            if (favorito.tipo === "pelicula") {
+        let favoritoPelis = []
+        let favoritoSeries = []
+        favoritos.map( favorito => {
+                       if (favorito.tipo === "pelicula") {
                 fetch(`https://api.themoviedb.org/3/movie/${favorito.id}?api_key=ed64b41cac1f7454df1403e56e96ce49`)
                 .then(respuesta => respuesta.json())
                 .then(datos => {
+                    favoritoPelis.push(datos)
                     this.setState({
-                        peliculasFavoritas: this.state.peliculasFavoritas.concat(datos)
+                        peliculasFavoritas: favoritoPelis
                     });
                 })
                 .catch(error => console.error(error));
@@ -42,13 +42,17 @@ class Favoritos extends Component {
                 fetch(`https://api.themoviedb.org/3/tv/${favorito.id}?api_key=ed64b41cac1f7454df1403e56e96ce49`)
                 .then(respuesta => respuesta.json())
                 .then(datos => {
+                    favoritoSeries.push(datos)
                     this.setState({
-                        seriesFavoritas: this.state.seriesFavoritas.concat(datos)
+                        seriesFavoritas: favoritoSeries
                     });
                 })
                 .catch(error => console.error(error));
             }
-        }
+        
+        })
+
+ 
     }
 
     eliminarPelicula(id) {
