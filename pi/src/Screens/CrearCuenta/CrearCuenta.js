@@ -26,6 +26,10 @@ onSubmit(email, password){
     }
     let usersStorage = localStorage.getItem("Usuario")
     let usersParseado
+    if (usuarioACrear.email.length < 1){
+        this.setState({ error: "No hay mail" })
+        return
+    }
     if (usersStorage == null) {
         usersParseado = {
             Email: [],
@@ -49,9 +53,9 @@ onSubmit(email, password){
     usersParseado.Email.push(email)
     usersParseado.Password.push(password)
     localStorage.setItem("Usuario", JSON.stringify(usersParseado))
-    cookies.set('user-auth-cookie', email)
     this.setState({ error: "" })
     this.props.history.push("/Login")
+    
 }
 
 enviarFormulario(event) {
