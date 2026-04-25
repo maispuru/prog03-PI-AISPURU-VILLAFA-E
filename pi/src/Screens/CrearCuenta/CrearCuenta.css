@@ -43,3 +43,32 @@ form button {
     border-radius: 8px;
     margin: 20px 0 30px 20px;
 }
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width: 420px) {
+    section {
+        width: 90%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .titulo-error {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
+        margin: 10px 0;
+    }
+
+    .TituloCrear {
+        font-size: 22px;
+        padding: 12px;
+    }
+}

@@ -33,3 +33,30 @@
     border-radius: 8px;
     margin: 20px 0 30px 20px;
 }
+
+
+@media (max-width: 420px) {
+    .all-movies .single-card-movie {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .titulo-resultados {
+        display: block;
+        width: 90%;
+        font-size: 20px;
+        padding: 10px 16px;
+        margin: 10px auto 20px auto;
+        text-align: center;
+    }
+
+    .filter-form {
+        width: 90%;
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    .filter-form input {
+        font-size: 14px;
+    }
+}
